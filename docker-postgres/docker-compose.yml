@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  example-postgres:
+    container_name: ${CONTAINER_NAME}
+    image: postgres:11
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+    networks:
+      - db_shared
+    volumes:
+      - "./db:/var/lib/postgresql"
+      - "./dump:/docker-entrypoint-initdb.d"
+
+networks:
+  db_shared:
+    driver: bridge

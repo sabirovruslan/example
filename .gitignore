@@ -1,0 +1,12 @@
+# PyCharm
+.idea
+
+# Mac OS artifacts
+.DS_Store
+
+# Everything of log files
+*.log
+
+# Python artifacts
+logs
+__pycache__
